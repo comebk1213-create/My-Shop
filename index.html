@@ -124,7 +124,7 @@ header{background:linear-gradient(135deg,#ff6b2b,#ff8c42);position:sticky;top:0;
 // ══════════════════════════════
 // CONFIG — แก้ตรงนี้
 // ══════════════════════════════
-var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwcsjS5PkkOTkEakf5LptaSrANqbf_pbxG6XfPi5CwLclPeHaEkK7DkAgeEqRn1bRgt/exec";
+var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxZ5EBUm70B1bEPoNYxMTQuXwTvpbzNubzzNgp4j_ZlLKhWlxQZ1K33mD00EpcQ50hX/exec";
 var STORE       = "G SHOP";
 
 // ── รูป QR ── ใส่ URL รูปที่อัปโหลดบน backend แล้ว
@@ -324,8 +324,7 @@ async function doOrder(total){
     total:total.toLocaleString("th-TH"),payment:plabel,orderId:oid
   };
   try{
-    if(APPS_URL!=="YOUR_APPS_SCRIPT_URL_HERE")
-      await fetch(APPS_URL,{method:"POST",body:JSON.stringify(payload),headers:{"Content-Type":"text/plain"},mode:"no-cors"});
+          await fetch(APPS_URL,{method:"POST",body:JSON.stringify(payload),headers:{"Content-Type":"text/plain"},mode:"no-cors"});
   }catch(e){}
   // reset
   cart={};
