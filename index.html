@@ -324,7 +324,7 @@ async function doOrder(total){
     total:total.toLocaleString("th-TH"),payment:plabel,orderId:oid
   };
   try{
-          await fetch(APPS_URL,{method:"POST",body:JSON.stringify(payload),headers:{"Content-Type":"text/plain"},mode:"no-cors"});
+          await fetch(APPS_URL,{method:"POST",body:JSON.stringify(payload));
   }catch(e){}
   // reset
   cart={};
