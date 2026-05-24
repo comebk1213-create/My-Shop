@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="la">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>ສັ່ງສິນຄ້າ — ຮ້ານຂອງຂ້ອຍ</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@100..900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--or:#ff6b2b;--bg:#fff8f4;--sub:#888;--bd:#f0e8e0}
+body{font-family: "Noto Sans Lao", sans-serif;background:var(--bg);padding-bottom:120px}
+header{background:linear-gradient(135deg,#ff6b2b,#ff8c42);position:sticky;top:0;z-index:50;box-shadow:0 2px 16px #ff6b2b40}
+.hi{max-width:480px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;gap:10}
+.logo{width:38px;height:38px;background:#fff3;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.sn{color:#fff;font-weight:800;font-size:18px}
+.ss{color:#ffe0cc;font-size:12px}
+.bnr{max-width:480px;margin:14px auto 0;padding:0 16px}
+.bb{background:linear-gradient(135deg,#fff3ee,#ffe8d6);border-radius:16px;padding:16px 20px;display:flex;align-items:center;gap:12px;border:1px solid #ffd5b8}
+.be{font-size:32px}
+.bt{font-size:13px;color:#c0460a;font-weight:500;line-height:1.6}
+.cats{max-width:480px;margin:14px auto 0;padding:0 16px}
+.cs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.cs::-webkit-scrollbar{display:none}
+.cb{border:1.5px solid var(--bd);background:#fff;border-radius:20px;padding:7px 16px;font-family:'Noto Sans Lao',sans-serif;font-size:13px;font-weight:500;color:var(--sub);cursor:pointer;white-space:nowrap;transition:all .18s}
+.cb.active{background:var(--or);border-color:var(--or);color:#fff}
+.sec{max-width:480px;margin:0 auto;padding:16px 16px 0}
+.st{font-weight:700;font-size:16px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pc{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px #0000000a;border:1px solid var(--bd);position:relative;transition:transform .18s}
+.pc:hover{transform:translateY(-3px)}
+.pi{width:100%;aspect-ratio:1;background:#f5ede5;display:flex;align-items:center;justify-content:center;font-size:60px}
+.pb{padding:10px 12px 12px}
+.pn{font-weight:600;font-size:14px;line-height:1.3;margin-bottom:4px}
+.pd{font-size:11px;color:var(--sub);margin-bottom:8px;line-height:1.5}
+.pp{font-weight:800;font-size:16px;color:var(--or)}
+.pp span{font-size:11px;font-weight:500;color:var(--sub)}
+.bp{position:absolute;top:8px;left:8px;background:#ff6b2b;color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:10px}
+.qc{display:flex;align-items:center;gap:6px;margin-top:8px}
+.qb{width:26px;height:26px;border-radius:50%;border:none;font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.qb.m{background:#f5ede5;color:var(--or)}
+.qb.p{background:var(--or);color:#fff}
+.qn{font-weight:700;font-size:15px;min-width:18px;text-align:center}
+.cbar{position:fixed;bottom:0;left:0;right:0;z-index:100;padding:12px 16px;pointer-events:none}
+.cbtn{max-width:480px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,#ff6b2b,#ff5500);color:#fff;border:none;border-radius:16px;padding:16px 20px;font-family:'Noto Sans Lao',sans-serif;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 8px 30px #ff6b2b60;width:100%;pointer-events:all}
+.cbadge{background:#fff;color:var(--or);border-radius:20px;padding:3px 10px;font-size:13px;font-weight:800}
+.ch{opacity:0;pointer-events:none}
+.ov{position:fixed;inset:0;background:#00000060;z-index:200;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
+.ov.show{opacity:1;pointer-events:all}
+.sh{background:#fff;border-radius:24px 24px 0 0;width:100%;max-width:480px;padding:24px 20px 36px;transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);max-height:92vh;overflow-y:auto}
+.ov.show .sh{transform:translateY(0)}
+.hdl{width:40px;height:4px;background:#e5e7eb;border-radius:2px;margin:0 auto 20px}
+.oi{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid #f3f4f6}
+.oi:last-child{border-bottom:none}
+.oil{display:flex;align-items:center;gap:10}
+.oie{font-size:24px;width:40px;height:40px;background:#fff8f4;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.oin{font-weight:600;font-size:13px}
+.oip{font-size:12px;color:var(--sub)}
+.oit{font-weight:700;color:var(--or);font-size:13px}
+.dv{height:1px;background:#f3f4f6;margin:12px 0}
+.tr{display:flex;justify-content:space-between;font-size:15px;margin-bottom:4px}
+.tr.big{font-weight:800;font-size:18px;color:var(--or)}
+.fl{font-size:13px;color:#374151;margin-bottom:5px;margin-top:12px;display:block;font-weight:600}
+.fi{width:100%;border:1.5px solid #e5e7eb;border-radius:10px;padding:10px 14px;font-family:'Noto Sans Lao',sans-serif;font-size:14px;outline:none;transition:border .18s}
+.fi:focus{border-color:var(--or)}
+.pl{font-size:13px;color:#374151;margin:14px 0 8px;display:block;font-weight:700}
+.po{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.popt{border:2px solid #e5e7eb;border-radius:14px;padding:14px 10px;text-align:center;cursor:pointer;transition:all .18s;background:#fff}
+.popt:hover{border-color:#ffc4a8}
+.popt.sel{border-color:var(--or);background:#fff8f4;box-shadow:0 0 0 3px #ff6b2b18}
+.poi{font-size:28px;margin-bottom:6px}
+.pol{font-size:13px;font-weight:700;color:#374151}
+.pos{font-size:11px;color:var(--sub);margin-top:2px}
+.pd2{border-radius:14px;padding:16px;margin-top:10px;display:none}
+.pd2.show{display:block}
+.cashd{background:#f0fdf4;border:1.5px solid #bbf7d0}
+.qrd{background:#f5f3ff;border:1.5px solid #ddd6fe}
+/* QR BOXES */
+.qrboxes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.qrbox{background:#fff;border:1.5px solid #ddd6fe;border-radius:14px;padding:12px;text-align:center}
+.qrbt{font-size:12px;font-weight:700;color:#5b21b6;margin-bottom:8px}
+.qrimg{width:100%;aspect-ratio:1;border-radius:10px;object-fit:contain;border:2px solid #ede9fe;background:#faf5ff;display:block}
+.qrph{width:100%;aspect-ratio:1;border-radius:10px;background:#f5f3ff;border:2px dashed #c4b5fd;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.qrph .ic{font-size:32px}
+.qrph .tx{font-size:10px;color:#7c3aed;font-weight:600;line-height:1.4}
+.qacc{font-size:10px;color:#6d28d9;margin-top:6px;line-height:1.6;font-weight:500}
+.pamount{font-size:24px;font-weight:800;margin:6px 0}
+.pnote{font-size:12px;line-height:1.7}
+.cfbtn{width:100%;background:linear-gradient(135deg,#ff6b2b,#ff5500);color:#fff;border:none;border-radius:14px;padding:15px;font-family:'Noto Sans Lao',sans-serif;font-size:16px;font-weight:700;cursor:pointer;margin-top:16px;box-shadow:0 4px 20px #ff6b2b40}
+.cfbtn:disabled{background:#ccc;box-shadow:none;cursor:not-allowed}
+.succbox{text-align:center;padding:20px 0}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hi">
+    <div class="logo" style="background:transparent;margin-right:8px"><img src="Gold_Shop-removebg-preview.png" style="width:56px;height:56px;border-radius:0;object-fit:contain"/></div>
+    <div><div class="sn">Gold Comeback</div><div class="ss">ອາຫານສຳເລັດຮູບ &amp; ເຄື່ອງດື່ມມີຄົບ 🔥</div></div>
+  </div>
+</header>
+
+<div class="bnr">
+  <div class="bb">
+    <div class="be">📦</div>
+    <div class="bt">ເປີດຮັບອໍເດີ່ທຸກມື້ 8:00–00:00<br/>ສັ່ງຂັ້ນຕ່ຳ ₭1000 | ຈັດສົ່ງຟຣີຢູ່ໃນພື້ນທີ່ຫໍພັກນັກສຶກສາ ມຂ </div>
+  </div>
+</div>
+
+<div class="cats"><div class="cs" id="catTabs"></div></div>
+<div id="productArea"></div>
+
+<div class="cbar">
+  <button class="cbtn ch" id="cartBtn" onclick="openCart()">
+    <span>🛒 ເບິ່ງກະຕ່າສິນຄ້າ</span>
+    <span class="cbadge" id="cartBadge">0 ລາຍການ · ₭0</span>
+  </button>
+</div>
+
+<div class="ov" id="overlay" onclick="bgClose(event)">
+  <div class="sh"><div class="hdl"></div><div id="sc"></div></div>
+</div>
+
+<script>
+// ══════════════════════════════
+// CONFIG — แก้ตรงนี้
+// ══════════════════════════════
+var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwJ6Prz9KdwMiNNVb796-FmdNxYML9Z2gPuKyr2mB6qhXjuS9LqMvscZbtERffte7Cf/exec";
+var STORE       = "Gold Comeback";
+
+// ── รูป QR ── ใส่ URL รูปที่อัปโหลดบน backend แล้ว
+var QR_PP_SRC   = "";   // ← URL รูป QR พร้อมเพย์  เช่น "https://myserver.com/qr-promptpay.png"
+var QR_BK_SRC   = "";   // ← URL รูป QR ธนาคาร    เช่น "https://myserver.com/qr-bank.png"
+
+// ── ข้อมูลบัญชี ── แสดงใต้กล่อง QR
+var PP_NUMBER   = "2001217779123";
+var BK_NAME     = "ທະນາຄານພັດທະນາລາວ";
+var BK_ACCNAME  = "KHAMPHOUMEE PHATHEBVONGSA MR";
+var BK_ACCNO    = "0301-xxxx-xxxx-5272";
+
+// ══════════════════════════════
+// MENU
+// ══════════════════════════════
+var MENU = [
+  { cat:"🍱 ອາຫານສຳເລັດຮູບ", items:[
+    {id:1, name:"มาม่าถ้วย รสต้มยำกุ้ง",  desc:"บะหมี่กึ่งสำเร็จรูป เผ็ดนัว",        price:15, e:"🍜", tag:"ຂາຍດີ"},
+    {id:2, name:"ข้าวกล่อง ไก่เทอริยากิ",  desc:"ข้าวหอมมะลิ ไก่ซอสเทอริยากิ",        price:45, e:"🍱", tag:"ແນະນຳ"},
+    {id:3, name:"โจ๊กซอง รสหมู",           desc:"โจ๊กกึ่งสำเร็จรูป เติมน้ำร้อนได้เลย", price:12, e:"🥣", tag:""},
+    {id:4, name:"ข้าวต้มถุง ไข่เค็ม",      desc:"ข้าวต้มซองพร้อมทาน ไข่เค็มสุก",       price:35, e:"🍚", tag:""},
+    {id:5, name:"สปาเก็ตตี้ซอง คาโบนาร่า", desc:"สปาเก็ตตี้กึ่งสำเร็จรูป ซอสครีม",     price:18, e:"🍝", tag:"ໃໝ່"},
+    {id:6, name:"ข้าวกล่อง ข้าวมันไก่",    desc:"ข้าวมันไก่ต้นตำรับ ซอสพิเศษ",         price:50, e:"🍗", tag:"ຂາຍດີ"},
+  ]},
+  { cat:"🍫 ຂະໜົມ", items:[
+    {id:7,  name:"เลย์ รสออริจินัล",         desc:"มันฝรั่งทอดกรอบ รสคลาสสิก 44g",  price:20, e:"🥔", tag:""},
+    {id:8,  name:"ปริงเกิ้ลส์ รสซาวร์ครีม",  desc:"มันฝรั่งกระป๋อง กรอบอร่อย 40g", price:35, e:"🫙", tag:"ຮິດ"},
+    {id:9,  name:"โอริโอ้ รสวานิลลา",         desc:"คุกกี้ช็อกโกแลต ไส้ครีม 133g",   price:45, e:"🍪", tag:""},
+    {id:10, name:"ถั่วอบเกลือ",               desc:"ถั่วลิสงอบกรอบ รสเกลือ 200g",    price:30, e:"🥜", tag:""},
+  ]},
+  { cat:"🥤 ເຄື່ອງດື່ມ", items:[
+    {id:11, name:"ชาเขียวมัทฉะ เย็น",      desc:"ชาเขียวญี่ปุ่น หวานน้อย 500ml",         price:35, e:"🍵", tag:"ແນະນຳ"},
+    {id:12, name:"โกโก้เย็น",               desc:"โกโก้เข้มข้น นมสด ใส่น้ำแข็ง 400ml",   price:30, e:"🍫", tag:"ຂາຍດີ"},
+    {id:13, name:"น้ำส้มคั้นสด",            desc:"ส้มสดคั้นใหม่ ไม่ผสมน้ำตาล 350ml",     price:40, e:"🍊", tag:""},
+    {id:14, name:"น้ำมะพร้าว 100%",         desc:"มะพร้าวน้ำหอม ธรรมชาติ 100% 330ml",    price:25, e:"🥥", tag:""},
+    {id:15, name:"สมูทตี้สตรอว์เบอร์รี่",   desc:"สตรอว์เบอร์รี่สด + นมโยเกิร์ต 400ml", price:55, e:"🍓", tag:"ໃໝ່"},
+  ]},
+  { cat:"🥚 ວັດຖຸດິບ", items:[
+    {id:16, name:"กาแฟดำร้อน", desc:"กาแฟอาราบิก้า บดสด",              price:30, e:"☕", tag:""},
+    {id:17, name:"ลาเต้ร้อน",  desc:"เอสเปรสโซ่คู่ นมอุ่น ฟองนมนุ่ม", price:45, e:"🥛", tag:"ຮິດ"},
+    {id:18, name:"ชาไทยร้อน",  desc:"ชาไทยแท้ นมข้นหวาน",              price:25, e:"🧉", tag:""},
+  ]},
+  { cat:"🧻 ເຄື່ອງໃຊ້ໃນຫ້ອງ", items:[
+    {id:19, name:"น้ำดื่มสิงห์ 600ml",  desc:"น้ำดื่มบริสุทธิ์",                    price:10, e:"💧", tag:""},
+    {id:20, name:"ทิปโก้ น้ำส้ม 100%",  desc:"น้ำส้ม 100% ไม่มีน้ำตาลเพิ่ม 200ml", price:15, e:"🍹", tag:""},
+    {id:21, name:"โค้ก กระป๋อง 325ml",  desc:"น้ำอัดลมโค้ก ซ่า เย็น อร่อย",        price:20, e:"🥤", tag:"ຂາຍດີ"},
+    {id:22, name:"เรดบูล กระป๋อง",      desc:"เครื่องดื่มชูกำลัง คลายง่วง",         price:15, e:"⚡", tag:""},
+  ]},
+];
+
+// STATE
+var cart = {}, payMethod = "";
+
+// CATS
+function renderCats() {
+  var cats = ["ທັ້ງໝົດ"].concat(MENU.map(function(s){return s.cat;}));
+  document.getElementById("catTabs").innerHTML = cats.map(function(c,i){
+    return '<button class="cb'+(i===0?" active":"")+'" onclick="filterCat(this,\''+c.replace(/'/g,"&#39;")+'\')">' + c + '</button>';
+  }).join("");
+}
+function filterCat(btn,cat){
+  document.querySelectorAll(".cb").forEach(function(b){b.classList.remove("active");});
+  btn.classList.add("active");
+  document.querySelectorAll(".catsec").forEach(function(s){
+    s.style.display=(cat==="ທັ້ງໝົດ"||s.dataset.cat===cat)?"block":"none";
+  });
+}
+
+// PRODUCTS
+function renderProducts(){
+  document.getElementById("productArea").innerHTML = MENU.map(function(s){
+    return '<div class="sec catsec" data-cat="'+s.cat+'">'
+      +'<div class="st">'+s.cat+'</div><div class="grid">'
+      +s.items.map(function(p){
+        return '<div class="pc">'
+          +(p.tag?'<div class="bp">'+p.tag+'</div>':'')
+          +'<div class="pi">'+p.e+'</div>'
+          +'<div class="pb">'
+          +'<div class="pn">'+p.name+'</div>'
+          +'<div class="pd">'+p.desc+'</div>'
+          +'<div class="pp">₭'+p.price+' <span>/ ອັນ</span></div>'
+          +'<div class="qc">'
+          +'<button class="qb m" onclick="chg('+p.id+',-1,event)">−</button>'
+          +'<span class="qn" id="qn'+p.id+'">0</span>'
+          +'<button class="qb p" onclick="chg('+p.id+',+1,event)">+</button>'
+          +'</div></div></div>';
+      }).join("")
+      +'</div></div>';
+  }).join("");
+}
+
+// CART
+function chg(id,d,e){
+  e.stopPropagation();
+  var p=null;
+  MENU.forEach(function(s){s.items.forEach(function(x){if(x.id===id)p=x;});});
+  if(!p)return;
+  var n=Math.max(0,(cart[id]?cart[id].qty:0)+d);
+  if(n===0)delete cart[id]; else cart[id]=Object.assign({},p,{qty:n});
+  document.getElementById("qn"+id).textContent=n;
+  updateBar();
+}
+function updateBar(){
+  var items=Object.values(cart);
+  var total=items.reduce(function(s,i){return s+i.price*i.qty;},0);
+  var count=items.reduce(function(s,i){return s+i.qty;},0);
+  document.getElementById("cartBtn").classList.toggle("ch",count===0);
+  document.getElementById("cartBadge").textContent=count+" ລາຍການ · ₭"+total.toLocaleString("la-LA");
+}
+function openCart(){payMethod="";renderSheet();document.getElementById("overlay").classList.add("show");}
+function closeCart(){document.getElementById("overlay").classList.remove("show");}
+function bgClose(e){if(e.target===document.getElementById("overlay"))closeCart();}
+function selPay(m){
+  payMethod=m;
+  document.querySelectorAll(".popt").forEach(function(el){el.classList.remove("sel");});
+  document.getElementById("po-"+m).classList.add("sel");
+  document.getElementById("dc").classList.toggle("show",m==="cash");
+  document.getElementById("dq").classList.toggle("show",m==="qr");
+}
+
+// BUILD ONE QR BOX
+function qrBox(title, src, accHtml){
+  var imgPart = src
+    ? '<img class="qrimg" src="'+src+'" alt=""/>'
+    : '<div class="qrph"><span class="ic"></span><span class="tx">รอใส่รูป QR<br/>จากแบ็คเอนด์</span></div>';
+  return '<div class="qrbox">'
+    +'<div class="qrbt">'+title+'</div>'
+    +imgPart
+    +'<div class="qacc">'+accHtml+'</div>'
+    +'</div>';
+}
+
+// RENDER SHEET
+function renderSheet(){
+  var items=Object.values(cart);
+  var sub=items.reduce(function(s,i){return s+i.price*i.qty;},0);
+  var fmt=sub.toLocaleString("la-LA");
+  var ppBox=qrBox("📲 QR ວັນເພຍ໌",   QR_PP_SRC, "ວັນເພຍ໌: "+PP_NUMBER);
+  var bkBox=qrBox("🏦 QR ບັນຊີທະນາຄານ", QR_BK_SRC, BK_NAME+"<br/>"+BK_ACCNAME+"<br/>เลขที่: "+BK_ACCNO);
+
+  document.getElementById("sc").innerHTML=
+    '<div style="font-weight:800;font-size:18px;margin-bottom:4px">🛒 ກະຕ່າຂອງເຈົ້າ</div>'
+    +'<div style="font-size:13px;color:var(--sub);margin-bottom:14px">ກວດສອບລາຍການແລ້ວເລືອກວິທີຊຳລະເງິນ</div>'
+    +items.map(function(i){
+      return '<div class="oi"><div class="oil">'
+        +'<div class="oie">'+i.e+'</div>'
+        +'<div><div class="oin">'+i.name+'</div><div class="oip">₭'+i.price+' × '+i.qty+'</div></div>'
+        +'</div><div class="oit">₭'+(i.price*i.qty).toLocaleString("la-LA")+'</div></div>';
+    }).join("")
+    +'<div class="dv"></div>'
+    +'<div class="tr big"><span>ຍອດລວມ</span><span>₭'+fmt+'</span></div>'
+    +'<label class="fl">👤 ຊື່ຜູ້ສັ່ງ *</label><input class="fi" id="n1" placeholder="ເຊັ່ນ ທ້າວ ສົມຊາຍ ຫຼໍ່ເທ່"/>'
+    +'<label class="fl">📱 ເບີໂທລະສັບ *</label><input class="fi" id="n2" type="tel" placeholder="20-XXXX-XXXX"/>'
+    +'<label class="fl">🏠 ໂຕະ / ຫ້ອງ / ທີ່ຢູ່ *</label><input class="fi" id="n3" placeholder="ເຊັ່ນ ໂຕະ 3, ຫ້ອງ 122, ມາສົ່ງ ຢູ່ໃນຄົວ"/>'
+    +'<label class="fl">📝 ໝາຍເຫດ *</label><input class="fi" id="n4" placeholder="ເຊັ່ນ ພໍ່ຄ້າຫຼໍ່, ບໍ່ຕ້ອງໃສ່ຖົງ"/>'
+    +'<span class="pl">💳 ເລືອກວິທີຊຳລະເງິນ *</span>'
+    +'<div class="po">'
+    +'<div class="popt" id="po-cash" onclick="selPay(\'cash\')">'
+    +'<div class="poi">💵</div><div class="pol">ເງິນສົດ</div><div class="pos">ຈ່າຍຕອນຮັບຂອງ</div></div>'
+    +'<div class="popt" id="po-qr" onclick="selPay(\'qr\')">'
+    +'<div class="poi">📲</div><div class="pol">ສະແກນ QR</div><div class="pos">ວັນເພຍ໌ / ທະນາຄານ</div></div>'
+    +'</div>'
+    // CASH PANEL
+    +'<div class="pd2 cashd" id="dc">'
+    +'<div style="font-size:13px;color:#166534;font-weight:700">💵 ຍອດທີ່ຕ້ອງຊຳລະ</div>'
+    +'<div class="pamount" style="color:#16a34a">₭'+fmt+'</div>'
+    +'<div class="pnote" style="color:#166534">ກະລຸນາຕຽມເງິນໃຫ້ພໍດີ ຫຼື ຖ້າທອນ<br/>ເຈົ້າຂອງຮ້ານຈະມາຮັບເງິນເມື່ອສົ່ງສິນຄ້າ</div>'
+    +'</div>'
+    // QR PANEL
+    +'<div class="pd2 qrd" id="dq">'
+    +'<div style="font-size:13px;color:#5b21b6;font-weight:700;text-align:center;margin-bottom:8px">📲 ເລືອກຊ່ອງທາງໂອນເງິນ</div>'
+    +'<div class="qrboxes">'+ppBox+bkBox+'</div>'
+    +'<div class="pamount" style="color:var(--or);text-align:center">₭'+fmt+'</div>'
+    +'<div class="pnote" style="color:#374151;text-align:center">ໂອນແລ້ວແຄັບຈໍສົ່ງໃຫ້ຮ້ານຄ້າດ້ວຍເນີ 🙏</div>'
+    +'</div>'
+    +'<button class="cfbtn" id="cfbtn" onclick="doOrder('+sub+')">✅ ຢືນຢັນສັ່ງຊື້</button>';
+}
+
+// SUBMIT
+async function doOrder(total){
+  var name=document.getElementById("n1").value.trim();
+  var phone=document.getElementById("n2").value.trim();
+  var table=document.getElementById("n3").value.trim();
+  var note=document.getElementById("n4").value.trim();
+  if(!name||!phone){alert("ກະລຸນາກອກຊື່ແລະເບີໂທລະສັບ");return;}
+  if(!payMethod){alert("ກະລຸນາເລືອກວິທີຊຳລະເງິນ");return;}
+  if(!table){alert("ກະລຸນາກອກໂຕະ / ຫ້ອງ / ທີ່ຢູ່");return;}
+  if(!payMethod){alert("ກະລຸນາເລືອກວິທີຊຳລະເງິນ");return;}
+  var btn=document.getElementById("cfbtn");
+  btn.disabled=true; btn.textContent="⏳ ກຳລັງສົ່ງອໍເດີ່...";
+  var items=Object.values(cart);
+  var rows=items.map(function(i){return "• "+i.e+" "+i.name+" × "+i.qty+" = ₭"+(i.price*i.qty);}).join("\n");
+  var oid="ORD-"+Date.now().toString().slice(-5);
+  var plabel=payMethod==="cash"?"💵 ເງິນສົດ":"📲 ສະແກນ QR";
+  var payload={
+    subject:"🍜 ["+STORE+"] ออเดอร์ใหม่ #"+oid+" — ₭"+total.toLocaleString("la-LA"),
+    name:name,phone:phone,table:table||"ไม่ระบุ",
+    items:rows+(note?"\n\n📝 ໝາຍເຫດ: "+note:""),
+    total:total.toLocaleString("la-LA"),payment:plabel,orderId:oid
+  };
+  try{
+          await fetch(APPS_SCRIPT_URL,{method:"POST",body:JSON.stringify(payload),headers:{"Content-Type":"text/plain"},mode:"no-cors"});
+  }catch(e){}
+  // reset
+  cart={};
+  document.querySelectorAll(".qn").forEach(function(el){el.textContent="0";});
+  updateBar();
+  document.getElementById("sc").innerHTML=
+    '<div class="succbox">'
+    +'<div style="font-size:64px;margin-bottom:12px">🎉</div>'
+    +'<div style="font-weight:800;font-size:20px;color:#16a34a;margin-bottom:6px">ສັ່ງຊື້ສຳເລັດ!</div>'
+    +'<div style="color:var(--sub);font-size:14px;line-height:1.9">'
+    +'ຂອບໃຈ <strong>'+name+'</strong> ເດີ້ໆໆໆໆໆໆໆໆໆ 😊<br/>'
+    +'ອໍເດີ່: <strong>#'+oid+'</strong><br/>'
+    +'ຍອດລວມ: <strong style="color:var(--or)">₭'+total.toLocaleString("la-LA")+'</strong><br/>'
+    +'ຊຳລະ: <strong>'+plabel+'</strong><br/><br/>'
+    +'✉️ ຮ້ານໄດ້ຮັບອໍເດີ່ແລ້ວເດີ້</div>'
+    +'<button class="cfbtn" onclick="closeCart()" style="background:linear-gradient(135deg,#16a34a,#22c55e);margin-top:20px">✓ ກັບມາຫນ້າເມນູ</button>'
+    +'</div>';
+}
+
+renderCats();
+renderProducts();
+</script>
+</body>
+</html>
