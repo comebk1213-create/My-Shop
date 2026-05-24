@@ -128,8 +128,8 @@ var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwJ6Prz9KdwMiNNVb
 var STORE       = "Gold Comeback";
 
 // ── รูป QR ── ใส่ URL รูปที่อัปโหลดบน backend แล้ว
-var QR_PP_SRC   = "";   // ← URL รูป QR พร้อมเพย์  เช่น "https://myserver.com/qr-promptpay.png"
-var QR_BK_SRC   = "";   // ← URL รูป QR ธนาคาร    เช่น "https://myserver.com/qr-bank.png"
+var QR_PP_SRC   = "https://drive.google.com/file/d/1-FPHNdXxOqs5lKrTWrWMqMxXote6gy6x/view?usp=drivesdk";   // ← URL รูป QR พร้อมเพย์  เช่น "https://myserver.com/qr-promptpay.png"
+var QR_BK_SRC   = "https://drive.google.com/file/d/1uGbvWryH0jzgI_MynKaupdEn94_8D51I/view?usp=drivesdk";   // ← URL รูป QR ธนาคาร    เช่น "https://myserver.com/qr-bank.png"
 
 // ── ข้อมูลบัญชี ── แสดงใต้กล่อง QR
 var PP_NUMBER   = "2001217779123";
@@ -278,9 +278,9 @@ function renderSheet(){
     +'<div class="tr big"><span>ຍອດລວມ</span><span>₭'+fmt+'</span></div>'
     +'<label class="fl">👤 ຊື່ຜູ້ສັ່ງ *</label><input class="fi" id="n1" placeholder="ເຊັ່ນ ທ້າວ ສົມຊາຍ ຫຼໍ່ເທ່"/>'
     +'<label class="fl">📱 ເບີໂທລະສັບ *</label><input class="fi" id="n2" type="tel" placeholder="20-XXXX-XXXX"/>'
-    +'<label class="fl">🏠 ໂຕະ / ຫ້ອງ / ທີ່ຢູ່</label><input class="fi" id="n3" placeholder="ເຊັ່ນ ໂຕະ 3, ຫ້ອງ 122, ມາສົ່ງ ຢູ່ໃນຄົວ"/>'
-    +'<label class="fl">📝 ໝາຍເຫດ</label><input class="fi" id="n4" placeholder="ເຊັ່ນ ພໍ່ຄ້າຫຼໍ່, ບໍ່ຕ້ອງໃສ່ຖົງ"/>'
-    +'<span class="pl">💳 ເລືອກວິທີຊຳລະເງິນ *</span>'
+    +'<label class="fl">🏠 ໂຕະ / ຫ້ອງ / ທີ່ຢູ່*</label><input class="fi" id="n3" placeholder="ເຊັ່ນ ໂຕະ 3, ຫ້ອງ 122, ມາສົ່ງ ຢູ່ໃນຄົວ"/>'
+    +'<label class="fl">📝 ໝາຍເຫດ*</label><input class="fi" id="n4" placeholder="ເຊັ່ນ ພໍ່ຄ້າຫຼໍ່, ບໍ່ຕ້ອງໃສ່ຖົງ"/>'
+    +'<span class="pl">💳 ເລືອກວິທີຊຳລະເງິນ*</span>'
     +'<div class="po">'
     +'<div class="popt" id="po-cash" onclick="selPay(\'cash\')">'
     +'<div class="poi">💵</div><div class="pol">ເງິນສົດ</div><div class="pos">ຈ່າຍຕອນຮັບຂອງ</div></div>'
