@@ -102,7 +102,7 @@ header{background:linear-gradient(135deg,#ff6b2b,#ff8c42);position:sticky;top:0;
 <div class="bnr">
   <div class="bb">
     <div class="be">📦</div>
-    <div class="bt">ເປີດຮັບອໍເດີ່ທຸກມື້ 8:00–00:00<br/>ສັ່ງຂັ້ນຕ່ຳ ₭50 | ຈັດສົ່ງຟຣິຢູ່ໃນພື້ນທີ່ຫໍພັກນັກສຶກສາ ມຂ </div>
+    <div class="bt">ເປີດຮັບອໍເດີ່ທຸກມື້ 8:00–00:00<br/>ສັ່ງຂັ້ນຕ່ຳ ₭1000 | ຈັດສົ່ງຟຣີຢູ່ໃນພື້ນທີ່ຫໍພັກນັກສຶກສາ ມຂ </div>
   </div>
 </div>
 
@@ -162,12 +162,12 @@ var MENU = [
     {id:14, name:"น้ำมะพร้าว 100%",         desc:"มะพร้าวน้ำหอม ธรรมชาติ 100% 330ml",    price:25, e:"🥥", tag:""},
     {id:15, name:"สมูทตี้สตรอว์เบอร์รี่",   desc:"สตรอว์เบอร์รี่สด + นมโยเกิร์ต 400ml", price:55, e:"🍓", tag:"ใหม่"},
   ]},
-  { cat:"🥚 ວັດຖຸດິບ & ຮ້ອນ", items:[
+  { cat:"🥚 ວັດຖຸດິບ", items:[
     {id:16, name:"กาแฟดำร้อน", desc:"กาแฟอาราบิก้า บดสด",              price:30, e:"☕", tag:""},
     {id:17, name:"ลาเต้ร้อน",  desc:"เอสเปรสโซ่คู่ นมอุ่น ฟองนมนุ่ม", price:45, e:"🥛", tag:"ฮิต"},
     {id:18, name:"ชาไทยร้อน",  desc:"ชาไทยแท้ นมข้นหวาน",              price:25, e:"🧉", tag:""},
   ]},
-  { cat:"🧻 ເຄື່ອງໃຊ້ & ນ້ຳໝາກໄມ້", items:[
+  { cat:"🧻 ເຄື່ອງໃຊ້ໃນຫ້ອງ", items:[
     {id:19, name:"น้ำดื่มสิงห์ 600ml",  desc:"น้ำดื่มบริสุทธิ์",                    price:10, e:"💧", tag:""},
     {id:20, name:"ทิปโก้ น้ำส้ม 100%",  desc:"น้ำส้ม 100% ไม่มีน้ำตาลเพิ่ม 200ml", price:15, e:"🍹", tag:""},
     {id:21, name:"โค้ก กระป๋อง 325ml",  desc:"น้ำอัดลมโค้ก ซ่า เย็น อร่อย",        price:20, e:"🥤", tag:"ขายดี"},
@@ -205,7 +205,7 @@ function renderProducts(){
           +'<div class="pb">'
           +'<div class="pn">'+p.name+'</div>'
           +'<div class="pd">'+p.desc+'</div>'
-          +'<div class="pp">₭'+p.price+' <span>/ ชิ้น</span></div>'
+          +'<div class="pp">₭'+p.price+' <span>/ ອັນ</span></div>'
           +'<div class="qc">'
           +'<button class="qb m" onclick="chg('+p.id+',-1,event)">−</button>'
           +'<span class="qn" id="qn'+p.id+'">0</span>'
@@ -267,7 +267,7 @@ function renderSheet(){
 
   document.getElementById("sc").innerHTML=
     '<div style="font-weight:800;font-size:18px;margin-bottom:4px">🛒 ກະຕ່າຂອງເຈົ້າ</div>'
-    +'<div style="font-size:13px;color:var(--sub);margin-bottom:14px">ตรวจสอบรายการแล้วเลือกวิธีชำระเงิน</div>'
+    +'<div style="font-size:13px;color:var(--sub);margin-bottom:14px">ກວດສອບລາຍການແລ້ວເລືອກວິທີຊຳລະເງິນ</div>'
     +items.map(function(i){
       return '<div class="oi"><div class="oil">'
         +'<div class="oie">'+i.e+'</div>'
@@ -275,21 +275,21 @@ function renderSheet(){
         +'</div><div class="oit">₭'+(i.price*i.qty).toLocaleString("la-LA")+'</div></div>';
     }).join("")
     +'<div class="dv"></div>'
-    +'<div class="tr big"><span>ยอดรวม</span><span>₭'+fmt+'</span></div>'
-    +'<label class="fl">👤 ชื่อผู้สั่ง *</label><input class="fi" id="n1" placeholder="เช่น สมชาย ใจดี"/>'
-    +'<label class="fl">📱 เบอร์โทรศัพท์ *</label><input class="fi" id="n2" type="tel" placeholder="08X-XXX-XXXX"/>'
-    +'<label class="fl">🏠 โต๊ะ / ห้อง / ที่อยู่</label><input class="fi" id="n3" placeholder="เช่น โต๊ะ 3, ห้อง 201"/>'
-    +'<label class="fl">📝 หมายเหตุ</label><input class="fi" id="n4" placeholder="เช่น ไม่เผ็ด, ไม่ใส่ผัก"/>'
-    +'<span class="pl">💳 เลือกวิธีชำระเงิน *</span>'
+    +'<div class="tr big"><span>ຍອດລວມ</span><span>₭'+fmt+'</span></div>'
+    +'<label class="fl">👤 ຊື່ຜູ້ສັ່ງ *</label><input class="fi" id="n1" placeholder="ເຊັ່ນ ທ້າວ ສົມຊາຍ ຫຼໍ່ເທ່"/>'
+    +'<label class="fl">📱 ເບີໂທລະສັບ *</label><input class="fi" id="n2" type="tel" placeholder="20-XXXX-XXXX"/>'
+    +'<label class="fl">🏠 ໂຕະ / ຫ້ອງ / ທີ່ຢູ່</label><input class="fi" id="n3" placeholder="ເຊັ່ນ ໂຕະ 3, ຫ້ອງ 122, ມາສົ່ງ ຢູ່ໃນຄົວ"/>'
+    +'<label class="fl">📝 ໝາຍເຫດ</label><input class="fi" id="n4" placeholder="ເຊັ່ນ ພໍ່ຄ້າຫຼໍ່, ບໍ່ຕ້ອງໃສ່ຖົງ"/>'
+    +'<span class="pl">💳 ເລືອກວິທີຊຳລະເງິນ *</span>'
     +'<div class="po">'
     +'<div class="popt" id="po-cash" onclick="selPay(\'cash\')">'
-    +'<div class="poi">💵</div><div class="pol">เงินสด</div><div class="pos">จ่ายตอนรับของ</div></div>'
+    +'<div class="poi">💵</div><div class="pol">ເງິນສົດ</div><div class="pos">ຈ່າຍຕອນຮັບຂອງ</div></div>'
     +'<div class="popt" id="po-qr" onclick="selPay(\'qr\')">'
-    +'<div class="poi">📲</div><div class="pol">สแกน QR</div><div class="pos">พร้อมเพย์ / ธนาคาร</div></div>'
+    +'<div class="poi">📲</div><div class="pol">ສະແກນ QR</div><div class="pos">ວັນເພຍ໌ / ທະນາຄານ</div></div>'
     +'</div>'
     // CASH PANEL
     +'<div class="pd2 cashd" id="dc">'
-    +'<div style="font-size:13px;color:#166534;font-weight:700">💵 ยอดที่ต้องชำระ</div>'
+    +'<div style="font-size:13px;color:#166534;font-weight:700">💵 ຍອດທີ່ຕ້ອງຊຳລະ</div>'
     +'<div class="pamount" style="color:#16a34a">₭'+fmt+'</div>'
     +'<div class="pnote" style="color:#166534">กรุณาเตรียมเงินให้พอดี หรือรอทอน<br/>พนักงานจะมารับเงินเมื่อส่งสินค้า</div>'
     +'</div>'
@@ -309,14 +309,14 @@ async function doOrder(total){
   var phone=document.getElementById("n2").value.trim();
   var table=document.getElementById("n3").value.trim();
   var note=document.getElementById("n4").value.trim();
-  if(!name||!phone){alert("กรุณากรอกชื่อและเบอร์โทรศัพท์");return;}
-  if(!payMethod){alert("กรุณาเลือกวิธีชำระเงิน");return;}
+  if(!name||!phone){alert("ກະລຸນາກອກຊື່ແລະເບີໂທລະສັບ");return;}
+  if(!payMethod){alert("ກະລຸນາເລືອກວິທີຊຳລະເງິນ");return;}
   var btn=document.getElementById("cfbtn");
-  btn.disabled=true; btn.textContent="⏳ กำลังส่งออเดอร์...";
+  btn.disabled=true; btn.textContent="⏳ ກຳລັງສົ່ງອໍເດີ່...";
   var items=Object.values(cart);
   var rows=items.map(function(i){return "• "+i.e+" "+i.name+" × "+i.qty+" = ₭"+(i.price*i.qty);}).join("\n");
   var oid="ORD-"+Date.now().toString().slice(-5);
-  var plabel=payMethod==="cash"?"💵 เงินสด":"📲 สแกน QR";
+  var plabel=payMethod==="cash"?"💵 ເງິນສົດ":"📲 ສະແກນ QR";
   var payload={
     subject:"🍜 ["+STORE+"] ออเดอร์ใหม่ #"+oid+" — ₭"+total.toLocaleString("la-LA"),
     name:name,phone:phone,table:table||"ไม่ระบุ",
@@ -333,14 +333,14 @@ async function doOrder(total){
   document.getElementById("sc").innerHTML=
     '<div class="succbox">'
     +'<div style="font-size:64px;margin-bottom:12px">🎉</div>'
-    +'<div style="font-weight:800;font-size:20px;color:#16a34a;margin-bottom:6px">สั่งซื้อสำเร็จ!</div>'
+    +'<div style="font-weight:800;font-size:20px;color:#16a34a;margin-bottom:6px">ສັ່ງຊື້ສຳເລັດ!</div>'
     +'<div style="color:var(--sub);font-size:14px;line-height:1.9">'
-    +'ขอบคุณ <strong>'+name+'</strong> นะคะ 😊<br/>'
-    +'ออเดอร์: <strong>#'+oid+'</strong><br/>'
-    +'ยอดรวม: <strong style="color:var(--or)">₭'+total.toLocaleString("la-LA")+'</strong><br/>'
-    +'ชำระ: <strong>'+plabel+'</strong><br/><br/>'
-    +'✉️ ร้านได้รับออเดอร์แล้วค่ะ</div>'
-    +'<button class="cfbtn" onclick="closeCart()" style="background:linear-gradient(135deg,#16a34a,#22c55e);margin-top:20px">✓ กลับหน้าเมนู</button>'
+    +'ຂອບໃຈ <strong>'+name+'</strong> ເດີ້ໆໆໆໆໆໆໆໆໆ 😊<br/>'
+    +'ອໍເດີ່: <strong>#'+oid+'</strong><br/>'
+    +'ຍອດລວມ: <strong style="color:var(--or)">₭'+total.toLocaleString("la-LA")+'</strong><br/>'
+    +'ຊຳລະ: <strong>'+plabel+'</strong><br/><br/>'
+    +'✉️ ຮ້ານໄດ້ຮັບອໍເດີ່ແລ້ວເດີ້</div>'
+    +'<button class="cfbtn" onclick="closeCart()" style="background:linear-gradient(135deg,#16a34a,#22c55e);margin-top:20px">✓ ກັບມາຫນ້າເມນູ</button>'
     +'</div>';
 }
 
