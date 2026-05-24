@@ -248,8 +248,8 @@ function selPay(m){
 // BUILD ONE QR BOX
 function qrBox(title, src, accHtml){
   var imgPart = src
-    ? '<img class="qrimg" src="'+src+'" alt="QR"/>'
-    : '<div class="qrph"><span class="ic">🖼️</span><span class="tx">รอใส่รูป QR<br/>จากแบ็คเอนด์</span></div>';
+    ? '<img class="qrimg" src="'+src+'" alt=""/>'
+    : '<div class="qrph"><span class="ic"></span><span class="tx">รอใส่รูป QR<br/>จากแบ็คเอนด์</span></div>';
   return '<div class="qrbox">'
     +'<div class="qrbt">'+title+'</div>'
     +imgPart
