@@ -201,7 +201,7 @@ function renderProducts(){
       +s.items.map(function(p){
         return '<div class="pc">'
           +(p.tag?'<div class="bp">'+p.tag+'</div>':'')
-          +'<div class="pi">'+p.e+'</div>'
+           +(p.img?'<img src="'+p.img+'" style="width:100%;height:120px;object-fit:cover;border-radius:12px 12px 0 0;">':'<div class="pi">'+p.e+'</div>')
           +'<div class="pb">'
           +'<div class="pn">'+p.name+'</div>'
           +'<div class="pd">'+p.desc+'</div>'
