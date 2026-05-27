@@ -124,7 +124,7 @@ header{background:linear-gradient(135deg,#ff6b2b,#ff8c42);position:sticky;top:0;
 // ══════════════════════════════
 // CONFIG — แก้ตรงนี้
 // ══════════════════════════════
-var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxxPRnDThb6mbzrNa2VeuJwirxax5UCmAnH_ITPlohvmOUx4RfsSCEZ5SZSVQmJIjuk/exec";
+var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyVb8nlCQWsjK5WF-_WNACfKJNO3009gFhQ3XDMTAA5365rB_MqnFfzK1WePAJZ13-1/exec";
 var STORE       = "Gold Comeback";
 
 // ── รูป QR ── ใส่ URL รูปที่อัปโหลดบน backend แล้ว
@@ -310,9 +310,9 @@ async function doOrder(total){
   var phone=document.getElementById("n2").value.trim();
   var table=document.getElementById("n3").value.trim();
   var note=document.getElementById("n4").value.trim();
-  if(!name||!phone){alert("ກະລຸນາກອກຊື່ແລະເບີໂທລະສັບ");return;}
-  if(!payMethod){alert("ກະລຸນາເລືອກວິທີຊຳລະເງິນ");return;}
-  if(!table){alert("ກະລຸນາກອກໂຕະ / ຫ້ອງ / ທີ່ຢູ່");return;}
+  if(!name){alert("ກະລຸນາກອກ ຊື່");return;}
+  if(!phone){alert("ກະລຸນາກອກ ເບີໂທ");return;}
+  if(!table){alert("ກະລຸນາກອກ ໂຕະ / ຫ້ອງ / ທີ່ຢູ່");return;}
   if(!payMethod){alert("ກະລຸນາເລືອກວິທີຊຳລະເງິນ");return;}
   var btn=document.getElementById("cfbtn");
   btn.disabled=true; btn.textContent="⏳ ກຳລັງສົ່ງອໍເດີ່...";
