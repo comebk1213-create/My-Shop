@@ -323,7 +323,8 @@ async function doOrder(total){
   var payload={
     subject:"🍜 ["+STORE+"] ອໍເດີ່ໃໝ່! #"+oid+" — ₭"+total.toLocaleString("la-LA"),
     name:name,phone:phone,table:table||"ບໍ່ລະບຸ",
-    items:rows+(note?"\n\n📝 ໝາຍເຫດ: "+note:""),
+    items:rows,
+    note:note||"ບມີ",
     total:total.toLocaleString("la-LA"),payment:plabel,orderId:oid
   };
   try{
