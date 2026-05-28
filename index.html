@@ -124,7 +124,7 @@ header{background:linear-gradient(135deg,#ff6b2b,#ff8c42);position:sticky;top:0;
 // ══════════════════════════════
 // CONFIG — แก้ตรงนี้
 // ══════════════════════════════
-var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyVb8nlCQWsjK5WF-_WNACfKJNO3009gFhQ3XDMTAA5365rB_MqnFfzK1WePAJZ13-1/exec";
+var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwmWk2td3kSeWpVIP5NCjd7Eopjbq-dNu5v2iSm_TZVwqghHy8vLzmAyyVUA2HpqDRH/exec";
 var STORE       = "Gold Comeback";
 
 // ── รูป QR ── ใส่ URL รูปที่อัปโหลดบน backend แล้ว
@@ -322,9 +322,7 @@ async function doOrder(total){
   var plabel=payMethod==="cash"?"💵 ເງິນສົດ":"📲 ສະແກນ QR";
   var payload={
     subject:"🍜 ["+STORE+"] ອໍເດີ່ໃໝ່! #"+oid+" — ₭"+total.toLocaleString("la-LA"),
-    name:name,phone:phone,table:table||"ບໍ່ລະບຸ",
-    items:rows,
-    note:note||"ບມີ",
+    items:rows,note:note||"ບມີ",
     total:total.toLocaleString("la-LA"),payment:plabel,orderId:oid
   };
   try{
