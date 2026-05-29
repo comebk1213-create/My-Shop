@@ -129,7 +129,7 @@ header{background:linear-gradient(135deg,#ff6b2b,#ff8c42);position:sticky;top:0;
 // ══════════════════════════════
 // CONFIG — แก้ตรงนี้
 // ══════════════════════════════
-var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxWLVaZlk03rWXrFV3EJpT4M6oQnykFd4Gki9cGvNYc5fBqNQbft2QkV2eQUBf-ePlK/exec";
+var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyMrv8J2ux2ezeHXxLG9v82UiZCXip0d2vR-09z1oOGY-3GTNnjh3rkmSW3p9c8g5A/exec";
 var STORE       = "Gold Comeback";
  
 // ── รูป QR ── ใส่ URL รูปที่อัปโหลดบน backend แล้ว
@@ -165,10 +165,10 @@ var MENU = [
     {id:12, name:"โกโก้เย็น",               desc:"โกโก้เข้มข้น นมสด ใส่น้ำแข็ง 400ml",   price:30, e:"🍫", tag:"ຂາຍດີ"},
     {id:13, name:"น้ำส้มคั้นสด",            desc:"ส้มสดคั้นใหม่ ไม่ผสมน้ำตาล 350ml",     price:40, e:"🍊", tag:""},
     {id:14, name:"น้ำมะพร้าว 100%",         desc:"มะพร้าวน้ำหอม ธรรมชาติ 100% 330ml",    price:25, e:"🥥", tag:""},
-    {id:15, name:"สมูทตี้สตรอว์เบอร์รี่",   desc:"สตรอว์เบอร์รี่สด + นมโยเกิร์ต 400ml", price:55, img:"TLN.jpg", tag:"ໃໝ່"},
+    {id:15, name:"สมูทตี้สตรอว์เบอร์รี่",   desc:"สตรอว์เบอร์รี่สด + นมโยเกิร์ต 400ml", price:55, e:"🍓", img:"TLN.jpg", tag:"ໃໝ່"},
   ]},
   { cat:"🥚 ວັດຖຸດິບ", items:[
-    {id:16, name:"ໄຂ່ໄກ່", desc:"ໄຂ່ສົດໆ ດີໆ! ຂອງGoldShop",              price:3000, img:"K.jpg", tag:""},
+    {id:16, name:"ໄຂ່ໄກ່", desc:"ໄຂ່ສົດໆ ດີໆ! ຂອງGoldShop",              price:3000, e:"🥚", img:"K.jpg", tag:""},
     {id:17, name:"ลาเต้ร้อน",  desc:"เอสเปรสโซ่คู่ นมอุ่น ฟองนมนุ่ม", price:45, e:"🥛", tag:"ຮິດ"},
     {id:18, name:"ชาไทยร้อน",  desc:"ชาไทยแท้ นมข้นหวาน",              price:25, e:"🧉", tag:""},
     {id:18, name:"ชาไทยร้อน",  desc:"ชาไทยแท้ นมข้นหวาน",              price:25, e:"🧉", tag:""},
@@ -353,7 +353,7 @@ async function doOrder(total){
   var btn=document.getElementById("cfbtn");
   btn.disabled=true; btn.textContent="⏳ ກຳລັງສົ່ງອໍເດີ່...";
   var items=Object.values(cart);
-  var rows=items.map(function(i){return "• "+i.e+" "+i.name+" × "+i.qty+" = ₭"+(i.price*i.qty);}).join("\n");
+  var rows=items.map(function(i){return "• "+(i.e||"🛍")+" "+i.name+" × "+i.qty+" = ₭"+(i.price*i.qty);}).join("\n");
   var oid="ORD-"+Date.now().toString().slice(-5);
   var plabel=payMethod==="cash"?"💵 ເງິນສົດ":"📲 ສະແກນ QR";
   // ── chunk slip: ถ้ารูปใหญ่เกิน 500KB ให้ส่งแยก request ──
