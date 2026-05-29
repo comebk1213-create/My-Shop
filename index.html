@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>ສັ່ງສິນຄ້າ — ຮ້ານຂອງຂ້ອຍ</title>
+<title>ສັ່ງສິນຄ້າ-ຮ້ານ Gold Comeback ເລີຍ</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@100..900&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -97,14 +97,14 @@ header{background:linear-gradient(135deg,#ff6b2b,#ff8c42);position:sticky;top:0;
 <header>
   <div class="hi">
     <div class="logo" style="background:transparent;margin-right:8px"><img src="Gold_Shop-removebg-preview.png" style="width:56px;height:56px;border-radius:0;object-fit:contain"/></div>
-    <div><div class="sn">Gold Comeback</div><div class="ss">ອາຫານສຳເລັດຮູບ &amp; ເຄື່ອງດື່ມມີຄົບ 🔥</div></div>
+    <div><div class="sn">Gold Comeback</div><div class="ss">ອາຫານສຳເລັດຮູບ ເຄຶ່ອງດື່ມ &amp; ຂອງໃຊ້ໃນຫ້ອງທົ່ວໄປມີພ້ອມຈຳໜ່າຍນ່າ 🔥</div></div>
   </div>
 </header>
  
 <div class="bnr">
   <div class="bb">
     <div class="be">📦</div>
-    <div class="bt">ເປີດຮັບອໍເດີ່ທຸກມື້ 8:00–00:00<br/>ສັ່ງຂັ້ນຕ່ຳ ₭1000 | ຈັດສົ່ງຟຣີຢູ່ໃນພື້ນທີ່ຫໍພັກນັກສຶກສາ ມຂ </div>
+    <div class="bt"> ເປີດຮັບອໍເດີ່ທຸກມື້ 24h <br/> ສັ່ງຂັ້ນຕ່ຳ 1000 ₭ | ຈັດສົ່ງຟຣີຢູ່ພາຍໃນພື້ນທີ່ຫໍພັກນັກສຶກສາ ມຂ </div>
   </div>
 </div>
  
@@ -129,7 +129,7 @@ header{background:linear-gradient(135deg,#ff6b2b,#ff8c42);position:sticky;top:0;
 // ══════════════════════════════
 // CONFIG — แก้ตรงนี้
 // ══════════════════════════════
-var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbys4zlo-p64oUK6tA6wbckOchYUR94T6suYEjTX14Z26dsOcgsg-RMdXPvRmrdWfE53/exec";
+var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyXYCOm4PkaIkpNt5x1l-LbWGwWHHXz_ASwm7KDSyQHJnubGfaVnZGZosIkOMQFTy3I/exec";
 var STORE       = "Gold Comeback";
  
 // ── รูป QR ── ใส่ URL รูปที่อัปโหลดบน backend แล้ว
@@ -186,7 +186,7 @@ var cart = {}, payMethod = "";
  
 // CATS
 function renderCats() {
-  var cats = ["ທັ້ງໝົດ"].concat(MENU.map(function(s){return s.cat;}));
+  var cats = ["ທັງໝົດ"].concat(MENU.map(function(s){return s.cat;}));
   document.getElementById("catTabs").innerHTML = cats.map(function(c,i){
     return '<button class="cb'+(i===0?" active":"")+'" onclick="filterCat(this,\''+c.replace(/'/g,"&#39;")+'\')">' + c + '</button>';
   }).join("");
@@ -195,7 +195,7 @@ function filterCat(btn,cat){
   document.querySelectorAll(".cb").forEach(function(b){b.classList.remove("active");});
   btn.classList.add("active");
   document.querySelectorAll(".catsec").forEach(function(s){
-    s.style.display=(cat==="ທັ້ງໝົດ"||s.dataset.cat===cat)?"block":"none";
+    s.style.display=(cat==="ທັງໝົດ"||s.dataset.cat===cat)?"block":"none";
   });
 }
  
@@ -273,8 +273,8 @@ function renderSheet(){
   var bkBox=qrBox("🏦 QR ບັນຊີທະນາຄານ", QR_BK_SRC, BK_NAME+"<br/>"+BK_ACCNAME+"<br/>ເລກທີ່: "+BK_ACCNO);
  
   document.getElementById("sc").innerHTML=
-    '<div style="font-weight:800;font-size:18px;margin-bottom:4px">🛒 ກະຕ່າຂອງເຈົ້າ</div>'
-    +'<div style="font-size:13px;color:var(--sub);margin-bottom:14px">ກວດສອບລາຍການແລ້ວເລືອກວິທີຊຳລະເງິນ</div>'
+    '<div style="font-weight:800;font-size:18px;margin-bottom:4px"> 🛒 ກະຕ່າສິນຄ້າຂອງເຈົ້າ </div>'
+    +'<div style="font-size:13px;color:var(--sub);margin-bottom:14px"> ກວດສອບລາຍການແລ້ວເລືອກວິທີຊຳລະເງິນ </div>'
     +items.map(function(i){
       return '<div class="oi"><div class="oil">'
         +(i.img?'<img src="'+i.img+'" style="width:40px;height:40px;object-fit:cover;border-radius:6px;">':'<div class="oie">'+i.e+'</div>')
@@ -283,43 +283,43 @@ function renderSheet(){
     }).join("")
     +'<div class="dv"></div>'
     +'<div class="tr big"><span>ຍອດລວມ</span><span>₭'+fmt+'</span></div>'
-    +'<label class="fl">👤 ຊື່ຜູ້ສັ່ງ </label><input class="fi" id="n1" placeholder="ເຊັ່ນ ທ້າວ ສົມຊາຍ ຫຼໍ່ເທ່"/>'
-    +'<label class="fl">📱 ເບີໂທລະສັບ </label><input class="fi" id="n2" type="tel" placeholder="20-XXXX-XXXX"/>'
-    +'<label class="fl">🏠 ໂຕະ / ຫ້ອງ / ທີ່ຢູ່ </label><input class="fi" id="n3" placeholder="ເຊັ່ນ ໂຕະ 3, ຫ້ອງ 122, ມາສົ່ງ ຢູ່ໃນຄົວ"/>'
-    +'<label class="fl">📝 ໝາຍເຫດ </label><input class="fi" id="n4" placeholder="ເຊັ່ນ ພໍ່ຄ້າຫຼໍ່, ບໍ່ຕ້ອງໃສ່ຖົງ"/>'
+    +'<label class="fl">👤 ຊື່ຜູ້ສັ່ງ </label><input class="fi" id="n1" placeholder=" ເຊັ່ນ ທ້າວ ສົມຊາຍ ຫຼໍ່ເທ່ "/>'
+    +'<label class="fl">📱 ເບີໂທລະສັບ </label><input class="fi" id="n2" type="tel" placeholder=" ເຊັ່ນ 2098396475"/>'
+    +'<label class="fl">🏠 ໂຕະ / ເບີຫ້ອງນອນ / ທີ່ຢູ່ </label><input class="fi" id="n3" placeholder=" ເຊັ່ນ ໂຕະ 3, ຫ້ອງ 122, ມາສົ່ງ ຢູ່ໃນຄົວ "/>'
+    +'<label class="fl">📝 ໝາຍເຫດ </label><input class="fi" id="n4" placeholder=" ບໍ່ຕ້ອງໃສ່ຖົງ ບຣ໊າໆໆໆໆໆ... "/>'
     +'<span class="pl">💳 ເລືອກວິທີຊຳລະເງິນ </span>'
     +'<div class="po">'
     +'<div class="popt" id="po-cash" onclick="selPay(\'cash\')">'
-    +'<div class="poi">💵</div><div class="pol">ເງິນສົດ</div><div class="pos">ຈ່າຍຕອນຮັບຂອງ</div></div>'
+    +'<div class="poi">💵</div><div class="pol"> ເງິນສົດ </div><div class="pos"> ຈ່າຍຕອນຮັບສິນຄ້າ </div></div>'
     +'<div class="popt" id="po-qr" onclick="selPay(\'qr\')">'
-    +'<div class="poi">📲</div><div class="pol">ສະແກນ QR</div><div class="pos">ວັນເພຍ໌ / ທະນາຄານ</div></div>'
+    +'<div class="poi">📲</div><div class="pol"> ສະແກນ QR </div><div class="pos"> ວັນເພຍ໌ / ທະນາຄານ </div></div>'
     +'</div>'
     // CASH PANEL
     +'<div class="pd2 cashd" id="dc">'
-    +'<div style="font-size:13px;color:#166534;font-weight:700">💵 ຍອດທີ່ຕ້ອງຊຳລະ</div>'
+    +'<div style="font-size:13px;color:#166534;font-weight:700"> 💵 ຍອດທີ່ຕ້ອງຊຳລະ </div>'
     +'<div class="pamount" style="color:#16a34a">₭'+fmt+'</div>'
-    +'<div class="pnote" style="color:#166534">ກະລຸນາຕຽມເງິນໃຫ້ພໍດີ ຫຼື ຖ້າທອນ<br/>ເຈົ້າຂອງຮ້ານຈະມາຮັບເງິນເມື່ອສົ່ງສິນຄ້າ</div>'
+    +'<div class="pnote" style="color:#166534"> ກະລຸນາຕຽມເງິນໃຫ້ພໍດີ ຫຼື ລໍຖ້າທອນ <br/> ເຈົ້າຂອງຮ້ານຈະມາຮັບເງິນເມື່ອສົ່ງສິນຄ້າ </div>'
     +'</div>'
     // QR PANEL
     +'<div class="pd2 qrd" id="dq">'
-    +'<div style="font-size:13px;color:#5b21b6;font-weight:700;text-align:center;margin-bottom:8px">📲 ເລືອກຊ່ອງທາງໂອນເງິນ</div>'
+    +'<div style="font-size:13px;color:#5b21b6;font-weight:700;text-align:center;margin-bottom:8px">📲 ເລືອກຊ່ອງທາງໂອນເງິນ </div>'
     +'<div class="qrboxes">'+ppBox+bkBox+'</div>'
     +'<div class="pamount" style="color:var(--or);text-align:center">₭'+fmt+'</div>'
-    +'<div class="pnote" style="color:#374151;text-align:center">ໂອນແລ້ວແຄັບຈໍສົ່ງໃຫ້ຮ້ານຄ້າດ້ວຍເນີ 🙏</div>'
+    +'<div class="pnote" style="color:#374151;text-align:center"> ໂອນແລ້ວແຄັບຈໍສົ່ງໃຫ້ຮ້ານຄ້າດ້ວຍເນີ 🙏</div>'
     +'<div style="margin-top:14px;background:#fff;border:2px dashed #c4b5fd;border-radius:14px;padding:14px;text-align:center">'
-    +'<div style="font-size:13px;font-weight:700;color:#5b21b6;margin-bottom:8px">📎 ແນບສລິບການໂອນເງິນ</div>'
+    +'<div style="font-size:13px;font-weight:700;color:#5b21b6;margin-bottom:8px">📎 ແນບສະລິບການໂອນເງິນ </div>'
     +'<label id="slipLabel" style="display:inline-block;cursor:pointer;background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;border-radius:10px;padding:9px 20px;font-size:13px;font-weight:700">'
-    +'📷 ເລືອກຮູບສລິບ'
+    +'🖼️ ເລືອກຮູບສະລິບການໂອນເງິນ'
     +'<input type="file" id="slipFile" accept="image/*" style="display:none" onchange="previewSlip(this)"/>'
     +'</label>'
     +'<div id="slipPreview" style="margin-top:10px;display:none">'
     +'<img id="slipImg" style="max-width:100%;max-height:180px;border-radius:10px;border:2px solid #ede9fe;object-fit:contain;"/>'
-    +'<div style="font-size:11px;color:#7c3aed;margin-top:4px;font-weight:600">✅ ເລືອກຮູບສຳເລັດ</div>'
+    +'<div style="font-size:11px;color:#7c3aed;margin-top:4px;font-weight:600">✅ ເລືອກຮູບສຳເລັດ </div>'
     +'</div>'
-    +'<div id="slipNote" style="font-size:11px;color:#9ca3af;margin-top:6px">ຮູບຈະຖືກສົ່ງໃຫ້ຮ້ານຄ້າພ້ອມໆອໍເດີ່</div>'
+    +'<div id="slipNote" style="font-size:11px;color:#9ca3af;margin-top:6px"> ຮູບຈະຖືກສົ່ງໃຫ້ຮ້ານຄ້າພ້ອມໆອໍເດີ່ </div>'
     +'</div>'
     +'</div>'
-    +'<button class="cfbtn" id="cfbtn" onclick="doOrder('+sub+')">✅ ຢືນຢັນສັ່ງຊື້</button>';
+    +'<button class="cfbtn" id="cfbtn" onclick="doOrder('+sub+')">✅ ຢືນຢັນການສັ່ງຊື້ </button>';
 }
  
 // SLIP PREVIEW
@@ -345,11 +345,11 @@ async function doOrder(total){
   var phone=document.getElementById("n2").value.trim();
   var table=document.getElementById("n3").value.trim();
   var note=document.getElementById("n4").value.trim();
-  if(!name){alert("ກະລຸນາກອກ ຊື່");return;}
+  if(!name){alert("ກະລຸນາກອກ ຊື່ຜູ້");return;}
   if(!phone){alert("ກະລຸນາກອກ ເບີໂທ");return;}
-  if(!table){alert("ກະລຸນາກອກ ໂຕະ / ຫ້ອງ / ທີ່ຢູ່");return;}
+  if(!table){alert("ກະລຸນາກອກ ໂຕະ / ເບີຫ້ອງນອນ / ທີ່ຢູ່");return;}
   if(!payMethod){alert("ກະລຸນາເລືອກວິທີຊຳລະເງິນ");return;}
-  if(payMethod==="qr"&&!slipBase64){alert("ກະລຸນາແນບສລິບການໂອນເງິນ");return;}
+  if(payMethod==="qr"&&!slipBase64){alert("ກະລຸນາແນບສະລິບການໂອນເງິນ");return;}
   var btn=document.getElementById("cfbtn");
   btn.disabled=true; btn.textContent="⏳ ກຳລັງສົ່ງອໍເດີ່...";
   var items=Object.values(cart);
@@ -401,9 +401,9 @@ async function doOrder(total){
   document.getElementById("sc").innerHTML=
     '<div class="succbox">'
     +'<div style="font-size:64px;margin-bottom:12px">🎉</div>'
-    +'<div style="font-weight:800;font-size:20px;color:#16a34a;margin-bottom:6px">ສັ່ງຊື້ສຳເລັດ!</div>'
+    +'<div style="font-weight:800;font-size:20px;color:#16a34a;margin-bottom:6px"> ສັ່ງຊື້ສຳເລັດ! </div>'
     +'<div style="color:var(--sub);font-size:14px;line-height:1.9">'
-    +'ຂອບໃຈ <strong>'+name+'</strong> ເດີ້ໆໆໆໆໆໆໆໆໆ 😊<br/>'
+    +'ຂອບໃຈ <strong>'+name+'</strong> ນ່ະຈ່ະ 😊<br/>'
     +'ອໍເດີ່: <strong>#'+oid+'</strong><br/>'
     +'ຍອດລວມ: <strong style="color:var(--or)">₭'+total.toLocaleString("la-LA")+'</strong><br/>'
     +'ຊຳລະ: <strong>'+plabel+'</strong><br/><br/>'
