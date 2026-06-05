@@ -370,7 +370,7 @@ async function doOrder(total){
   var oid="ORD-"+Date.now().toString().slice(-5);
   var plabel=payMethod==="cash"?"💵 ເງິນສົດ":"📲 ສະແກນ QR";
   // ── chunk slip: ถ้ารูปใหญ่เกิน 500KB ให้ส่งแยก request ──
-  var SLIP_INLINE_LIMIT = 500 * 1024 * 4/3; // ~500KB base64 chars
+  var SLIP_INLINE_LIMIT = 200 * 1024 * 4/3; // ~500KB base64 chars
   var slipForPayload = "";
   var slipMimeForPayload = "";
   var slipLarge = slipBase64 && slipBase64.length > SLIP_INLINE_LIMIT;
