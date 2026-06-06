@@ -341,13 +341,25 @@ var slipMimeType = "";
 function previewSlip(input){
   var file=input.files[0];
   if(!file)return;
-  slipMimeType=file.type||"image/jpeg";
   var reader=new FileReader();
   reader.onload=function(ev){
-    slipBase64=ev.target.result.split(",")[1];
-    document.getElementById("slipImg").src=ev.target.result;
-    document.getElementById("slipPreview").style.display="block";
-    document.getElementById("slipNote").textContent="📎 "+file.name;
+    var img=new Image();
+    img.onload=function(){
+      var MAX=1200, quality=0.7;
+      var w=img.width, h=img.height;
+      if(w>MAX){h=Math.round(h*MAX/w);w=MAX;}
+      if(h>MAX){w=Math.round(w*MAX/h);h=MAX;}
+      var canvas=document.createElement("canvas");
+      canvas.width=w; canvas.height=h;
+      canvas.getContext("2d").drawImage(img,0,0,w,h);
+      var dataUrl=canvas.toDataURL("image/jpeg",quality);
+      slipBase64=dataUrl.split(",")[1];
+      slipMimeType="image/jpeg";
+      document.getElementById("slipImg").src=dataUrl;
+      document.getElementById("slipPreview").style.display="block";
+      document.getElementById("slipNote").textContent="📎 "+file.name;
+    };
+    img.src=ev.target.result;
   };
   reader.readAsDataURL(file);
 }
@@ -369,42 +381,18 @@ async function doOrder(total){
   var rows=items.map(function(i){return "• "+(i.e||"🛍")+" "+i.name+" × "+i.qty+" = ₭"+(i.price*i.qty);}).join("\n");
   var oid="ORD-"+Date.now().toString().slice(-5);
   var plabel=payMethod==="cash"?"💵 ເງິນສົດ":"📲 ສະແກນ QR";
-  // ── chunk slip: ถ้ารูปใหญ่เกิน 500KB ให้ส่งแยก request ──
-  var SLIP_INLINE_LIMIT = 200 * 1024 * 4/3; // ~500KB base64 chars
-  var slipForPayload = "";
-  var slipMimeForPayload = "";
-  var slipLarge = slipBase64 && slipBase64.length > SLIP_INLINE_LIMIT;
- 
-  if(!slipLarge){
-    slipForPayload = slipBase64||"";
-    slipMimeForPayload = slipMimeType||"";
-  }
  
   var payload={
     subject:"🍜 ["+STORE+"] ອໍເດີ່ໃໝ່! #"+oid+" — ₭"+total.toLocaleString("la-LA"),
     name:name,phone:phone,table:table||"-",
     items:rows,note:note||"ບໍ່ລະບຸ",
     total:total.toLocaleString("la-LA"),payment:plabel,orderId:oid,
-    slipBase64:slipForPayload,
-    slipMimeType:slipMimeForPayload
+    slipBase64:slipBase64||"",
+    slipMimeType:slipMimeType||"image/jpeg"
   };
   try{
     await fetch(APPS_SCRIPT_URL,{method:"POST",body:JSON.stringify(payload),headers:{"Content-Type":"text/plain"},mode:"no-cors"});
   }catch(e){}
- 
-  // ── ถ้ารูปใหญ่ให้ส่ง slip ตามหลัง ──
-  if(slipLarge){
-    try{
-      var slipPayload={
-        type:"slip_only",
-        orderId:oid,
-        name:name,
-        slipBase64:slipBase64,
-        slipMimeType:slipMimeType
-      };
-      await fetch(APPS_SCRIPT_URL,{method:"POST",body:JSON.stringify(slipPayload),headers:{"Content-Type":"text/plain"},mode:"no-cors"});
-    }catch(e){}
-  }
  
   slipBase64=""; slipMimeType="";
   // reset
