@@ -377,7 +377,7 @@ async function doOrder(total){
   var btn=document.getElementById("cfbtn");
   btn.disabled=true; btn.textContent="⏳ ກຳລັງສົ່ງອໍເດີ່...";
   var items=Object.values(cart);
-  var rows=items.map(function(i){return "• "+(i.e||"🛍")+" "+i.name+" × "+i.qty+" = ₭"+(i.price*i.qty);}).join("\n");
+  var rows=items.map(function(i){return "• "+(i.e||"🛍")+" "+i.name+" × "+i.qty+" = ₭"+(i.price*i.qty).toLocaleString("la-LA");}).join("\n");
   var oid="ORD-"+Date.now().toString().slice(-5);
   var plabel=payMethod==="cash"?"💵 ເງິນສົດ":"📲 ສະແກນ QR";
  
